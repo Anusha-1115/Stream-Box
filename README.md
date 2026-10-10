@@ -1,7 +1,7 @@
 # StreamBox
 
 A responsive, Netflix-inspired streaming UI built with **HTML, CSS and vanilla JavaScript** (no frameworks).
-
+** Live Demo ** : streambox-anusha.netlify.app/
 ## Features
 - Landing page with hero, ranked Trending row and animated FAQ accordion
 - Demo sign in / sign out (email only, validated, kept in localStorage)
