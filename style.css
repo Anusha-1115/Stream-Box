@@ -1,0 +1,105 @@
+:root{--red:#E50914;--dark:#141414;--grey:#303030}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:#fff}
+button{font:inherit;color:inherit}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid #fff;outline-offset:2px}
+
+/* Navbar */
+nav{position:fixed;top:0;left:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 50px;z-index:1000;transition:background .3s}
+nav.solid{background:var(--dark)}
+.logo{font-family:'Bebas Neue',sans-serif;color:var(--red);font-size:3rem;letter-spacing:2px;font-weight:normal}
+.nav-right{display:flex;align-items:center;gap:12px}
+#search{padding:10px 14px;border-radius:4px;border:1px solid #777;background:rgba(0,0,0,.6);color:#fff;width:220px}
+.signin-btn{background:var(--red);border:none;padding:12px 22px;border-radius:5px;cursor:pointer}
+.signin-btn:hover,.email-box button:hover,.btn.red:hover{background:#c40812}
+
+/* Landing hero */
+.hero{height:100vh;background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url("assets/hero-bg.webp") center/cover,#000;display:flex;justify-content:center;align-items:center;text-align:center;padding:0 20px}
+.hero-content{max-width:800px;margin-top:100px}
+.hero-content h1{font-size:4rem;font-weight:900;line-height:1.1;margin-bottom:20px}
+.hero-content h3{font-size:1.6rem;margin-bottom:20px}
+.hero-content p{font-size:1.2rem;margin-bottom:25px}
+.email-box{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.email-box input{width:400px;max-width:90%;padding:16px;border:none;border-radius:4px;font-size:1rem}
+.email-box button{padding:16px 25px;background:var(--red);border:none;border-radius:4px;cursor:pointer;font-size:1rem}
+
+/* Rows and cards */
+.row{padding:0 50px;margin-bottom:30px}
+.trending{padding-top:40px}
+.row h2{margin-bottom:10px;font-size:1.6rem}
+.track{display:flex;gap:12px;overflow-x:auto;padding:12px 4px;scroll-snap-type:x proximity;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.track.grid{flex-wrap:wrap;overflow:visible}
+.card{flex:0 0 auto;width:160px;height:240px;border:0;border-radius:6px;overflow:hidden;cursor:pointer;background:var(--grey);transition:transform .25s;scroll-snap-align:start;position:relative;z-index:2}
+.card:hover,.card:focus-visible{transform:scale(1.08)}
+.card img{width:100%;height:100%;object-fit:cover;display:block}
+.ph{height:100%;display:flex;align-items:center;justify-content:center;padding:10px;text-align:center;font-weight:bold;background:linear-gradient(160deg,#b20710,#221f1f)}
+.ranked{padding-left:40px}
+.movie-rank{position:relative;flex:0 0 auto;margin-left:30px}
+.movie-rank span{position:absolute;left:-28px;bottom:-10px;font-size:120px;font-weight:900;color:#000;-webkit-text-stroke:2px #fff;z-index:1}
+
+/* Browse banner */
+.banner{height:80vh;min-height:440px;background-size:cover;background-position:center top;position:relative;display:flex;align-items:flex-end;padding:0 50px 90px;margin-bottom:-60px}
+.banner::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,var(--dark) 5%,transparent 60%),linear-gradient(to right,rgba(0,0,0,.7),transparent 60%)}
+.banner-content{position:relative;z-index:1;max-width:520px}
+.banner h2{font-size:3rem;margin-bottom:12px}
+.banner p{margin-bottom:20px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+#rows{position:relative;z-index:2}
+#rows.searching{padding-top:100px}
+.empty{padding:0 50px;color:#aaa}
+
+/* Buttons */
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{padding:12px 24px;border:0;border-radius:5px;cursor:pointer;font-weight:bold}
+.btn.light{background:#fff;color:#000}
+.btn.grey{background:rgba(109,109,110,.7)}
+.btn.red{background:var(--red)}
+.btn:hover{opacity:.85}
+
+/* Dialogs */
+dialog{margin:auto;border:0;border-radius:10px;background:#181818;color:#fff;max-height:92vh;overflow:auto}
+dialog::backdrop{background:rgba(0,0,0,.75)}
+#modal{width:min(850px,94vw)}
+.m-head{height:340px;background:linear-gradient(160deg,#b20710,#221f1f) center/cover;position:relative}
+.m-head::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,#181818,transparent 60%)}
+.close{position:absolute;top:12px;right:12px;z-index:2;width:36px;height:36px;border-radius:50%;border:0;background:#181818;font-size:1.5rem;cursor:pointer}
+.m-body{padding:0 30px 30px;margin-top:-30px;position:relative;z-index:1}
+.m-body h2{margin-bottom:8px;font-size:2rem}
+.meta{color:#46d369;font-weight:bold;margin-bottom:12px}
+.m-body>p{line-height:1.5;margin-bottom:20px}
+#m-video{margin-top:20px}
+#m-video iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:6px}
+.auth-form{width:min(380px,90vw);padding:36px;display:flex;flex-direction:column;gap:14px}
+.auth-form input{padding:14px;border-radius:4px;border:0;background:#333;color:#fff;font-size:1rem}
+.error{color:#ffa00a;min-height:1.2em;font-size:.9rem}
+.note{color:#999;font-size:.85rem}
+
+/* FAQ */
+.faq{padding:60px 40px}
+.faq h2{text-align:center;font-size:2.5rem;margin-bottom:30px}
+.faq-item{max-width:800px;margin:10px auto}
+.faq-question{width:100%;background:var(--grey);border:none;padding:20px;font-size:1.2rem;text-align:left;cursor:pointer;display:flex;justify-content:space-between}
+.faq-question::after{content:"+";font-size:1.6rem;line-height:1;transition:transform .3s}
+.open .faq-question::after{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;background:var(--grey);padding:0 20px;transition:max-height .35s,padding .35s}
+.open .faq-answer{max-height:200px;padding:20px;margin-top:2px}
+
+footer{text-align:center;padding:25px;background:#000;margin-top:40px;color:#bbb}
+
+@media(max-width:768px){
+  nav{padding:14px 16px}
+  .logo{font-size:2rem}
+  #search{width:130px}
+  .hero-content h1{font-size:2.5rem}
+  .hero-content h3{font-size:1.2rem}
+  .email-box{flex-direction:column;align-items:center}
+  .row,.banner,.empty{padding-left:16px;padding-right:16px}
+  .banner h2{font-size:2rem}
+  .card{width:125px;height:188px}
+  .m-head{height:220px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.credit{font-size:.8rem;color:#888;margin-top:8px}

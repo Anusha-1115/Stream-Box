@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Streaming UI built with HTML, CSS and vanilla JavaScript using the TMDB API.">
+<title>StreamBox</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav id="nav">
+  <h1 class="logo">STREAMBOX</h1>
+  <div class="nav-right">
+    <input id="search" type="search" placeholder="Search movies" aria-label="Search movies" hidden>
+    <button class="signin-btn" id="authBtn">Sign In</button>
+  </div>
+</nav>
+
+<!-- Landing page (signed out) -->
+<main id="landing">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Unlimited movies, TV shows and more</h1>
+      <h3>Watch anywhere. Cancel anytime.</h3>
+      <p>Ready to watch? Enter your email to get started.</p>
+      <form class="email-box" id="start">
+        <input type="email" id="startEmail" placeholder="Email address" required>
+        <button>Get Started &gt;</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="row trending">
+    <h2>Trending Now</h2>
+    <div class="track ranked" id="trending"></div>
+  </section>
+
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><button class="faq-question" aria-expanded="false">What is StreamBox?</button>
+      <div class="faq-answer"><p>StreamBox is a demo streaming app that shows movies and trailers from the TMDB database.</p></div></div>
+    <div class="faq-item"><button class="faq-question" aria-expanded="false">How much does StreamBox cost?</button>
+      <div class="faq-answer"><p>StreamBox is a free demo project, so there is nothing to pay.</p></div></div>
+    <div class="faq-item"><button class="faq-question" aria-expanded="false">Where can I watch?</button>
+      <div class="faq-answer"><p>Watch anywhere, anytime on an unlimited number of devices.</p></div></div>
+    <div class="faq-item"><button class="faq-question" aria-expanded="false">How do I cancel?</button>
+      <div class="faq-answer"><p>There is no membership. Just sign out whenever you like.</p></div></div>
+  </section>
+</main>
+
+<!-- Browse page (signed in) -->
+<main id="browse" hidden>
+  <header class="banner" id="banner">
+    <div class="banner-content">
+      <h2 id="b-title"></h2>
+      <p id="b-over"></p>
+      <div class="btns">
+        <button class="btn light" id="b-play">&#9654; Play</button>
+        <button class="btn grey" id="b-info">More Info</button>
+      </div>
+    </div>
+  </header>
+  <div id="rows"></div>
+</main>
+
+<footer>
+  <p>StreamBox by Anusha &middot; Educational project</p>
+  <p class="credit">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+</footer>
+
+<!-- Sign in -->
+<dialog id="auth">
+  <form id="authForm" class="auth-form" novalidate>
+    <h2>Sign In</h2>
+    <input type="email" id="email" placeholder="Email address" autocomplete="email">
+    <p class="error" id="authErr" role="alert"></p>
+    <button class="btn red">Sign In</button>
+    <p class="note">Demo only: enter any valid email. It stays in your browser and is never sent anywhere.</p>
+  </form>
+</dialog>
+
+<!-- Movie details -->
+<dialog id="modal">
+  <div class="m-head" id="m-head"><button class="close" id="m-close" aria-label="Close">&times;</button></div>
+  <div class="m-body">
+    <h2 id="m-title"></h2>
+    <p class="meta" id="m-meta"></p>
+    <p id="m-over"></p>
+    <div class="btns">
+      <button class="btn light" id="m-play">&#9654; Play trailer</button>
+      <button class="btn grey" id="m-list"></button>
+    </div>
+    <div id="m-video"></div>
+  </div>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
